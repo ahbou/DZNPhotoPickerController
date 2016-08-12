@@ -76,14 +76,14 @@ NSArray *NSArrayFromServices(DZNPhotoPickerControllerServices services)
     if ((services & DZNPhotoPickerControllerService500px) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerService500px)];
     }
+    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
+        [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceGoogleImages)];
+    }
     if ((services & DZNPhotoPickerControllerServiceFlickr) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceFlickr)];
     }
     if ((services & DZNPhotoPickerControllerServiceInstagram) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceInstagram)];
-    }
-    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
-        [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceGoogleImages)];
     }
     if ((services & DZNPhotoPickerControllerServiceBingImages) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceBingImages)];
