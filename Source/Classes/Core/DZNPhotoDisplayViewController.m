@@ -96,7 +96,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
     NSAssert((_segmentedControlTitles.count <= 4), @"DZNPhotoPickerController doesn't support more than 4 photo service providers");
     
     _selectedService = DZNFirstPhotoServiceFromPhotoServices(self.navigationController.supportedServices);
-    NSAssert((_selectedService > 0), @"DZNPhotoPickerController requieres at least 1 supported photo service provider");
+    NSAssert((_selectedService > 0), @"DZNPhotoPickerController requires at least 1 supported photo service provider");
     
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.edgesForExtendedLayout = UIRectEdgeAll;
