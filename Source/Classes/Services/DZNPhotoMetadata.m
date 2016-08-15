@@ -144,7 +144,10 @@
     
     for (NSDictionary *object in reponse) {
         DZNPhotoMetadata *metadata = [[DZNPhotoMetadata alloc] initWithObject:object service:service];
-        [result addObject:metadata];
+        
+        if ([metadata.sourceURL.scheme.lowercaseString isEqualToString:@"https"]) {
+            [result addObject:metadata];
+        }        
     }
     
     return result;

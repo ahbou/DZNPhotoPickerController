@@ -129,10 +129,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self.searchBar performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.01];
-    //    if (self.autoFocusOnSearchBar) {
-    //        [self.searchBar becomeFirstResponder];
-    //    }
+    [self.searchBar performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.005];
 }
 
 
@@ -535,7 +532,6 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
     [self resetSearchTimer];
     
     id <DZNPhotoServiceClientProtocol> client = [[DZNPhotoServiceFactory defaultFactory] clientForService:DZNPhotoPickerControllerServiceFlickr];
-
     [client searchTagsWithKeyword:term
                        completion:^(NSArray *list, NSError *error) {
                            
@@ -569,7 +565,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
     [self.collectionView reloadData];
     
     self.searchBar.text = keyword;
-
+    
     [self.selectedServiceClient searchPhotosWithKeyword:keyword
                                                    page:self.currentPage
                                           resultPerPage:self.resultPerPage

@@ -131,7 +131,7 @@
 - (void)presentPhotoSearch:(id)sender
 {
     DZNPhotoPickerController *picker = [DZNPhotoPickerController new];
-    picker.supportedServices =  DZNPhotoPickerControllerServiceGiphy | DZNPhotoPickerControllerServiceRiffsy | DZNPhotoPickerControllerServiceGoogleImages;
+    picker.supportedServices =  DZNPhotoPickerControllerServiceGiphy | DZNPhotoPickerControllerServiceRiffsy | DZNPhotoPickerControllerServiceGoogleImages | DZNPhotoPickerControllerServiceFlickr;
     picker.allowsEditing = NO;
     picker.cropMode = DZNPhotoEditorViewControllerCropModeCircular;
     picker.initialSearchTerm = @"Chile";
