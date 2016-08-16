@@ -45,17 +45,18 @@ DZNPhotoPickerControllerServices DZNPhotoServiceFromName(NSString *name)
 
 DZNPhotoPickerControllerServices DZNFirstPhotoServiceFromPhotoServices(DZNPhotoPickerControllerServices services)
 {
+    
     if ((services & DZNPhotoPickerControllerService500px) > 0) {
         return DZNPhotoPickerControllerService500px;
+    }
+    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
+        return DZNPhotoPickerControllerServiceGoogleImages;
     }
     if ((services & DZNPhotoPickerControllerServiceFlickr) > 0) {
         return DZNPhotoPickerControllerServiceFlickr;
     }
     if ((services & DZNPhotoPickerControllerServiceInstagram) > 0) {
         return DZNPhotoPickerControllerServiceInstagram;
-    }
-    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
-        return DZNPhotoPickerControllerServiceGoogleImages;
     }
     if ((services & DZNPhotoPickerControllerServiceBingImages) > 0) {
         return DZNPhotoPickerControllerServiceBingImages;
@@ -76,11 +77,11 @@ NSArray *NSArrayFromServices(DZNPhotoPickerControllerServices services)
     if ((services & DZNPhotoPickerControllerService500px) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerService500px)];
     }
-    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
-        [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceGoogleImages)];
-    }
     if ((services & DZNPhotoPickerControllerServiceFlickr) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceFlickr)];
+    }
+    if ((services & DZNPhotoPickerControllerServiceGoogleImages) > 0) {
+        [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceGoogleImages)];
     }
     if ((services & DZNPhotoPickerControllerServiceInstagram) > 0) {
         [titles addObject:NSStringFromService(DZNPhotoPickerControllerServiceInstagram)];

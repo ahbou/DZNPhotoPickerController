@@ -83,6 +83,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
 {
     self.title = NSLocalizedString(@"Internet Photos", nil);
     self.currentPage = 0;
+    self.selectedService = DZNPhotoPickerControllerServiceGoogleImages;
 }
 
 
@@ -188,7 +189,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
         searchBar.scopeButtonTitles = self.segmentedControlTitles;
         searchBar.searchBarStyle = UISearchBarStyleProminent;
         searchBar.barStyle = UIBarStyleDefault;
-        searchBar.selectedScopeButtonIndex = 0;
+        searchBar.selectedScopeButtonIndex = 1;
         searchBar.clipsToBounds = NO;
         searchBar.delegate = self;
     }
