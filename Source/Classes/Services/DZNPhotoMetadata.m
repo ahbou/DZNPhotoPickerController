@@ -9,6 +9,7 @@
 //
 
 #import "DZNPhotoMetadata.h"
+#import "DZNPhotoServiceConstants.h"
 
 @interface DZNPhotoMetadata ()
 @property (readwrite, nonatomic) id Id;
@@ -141,11 +142,12 @@
 + (NSArray *)metadataListWithResponse:(NSArray *)reponse service:(DZNPhotoPickerControllerServices)service
 {
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:reponse.count];
+    NSURL *baseURL = baseURLForService(service);
     
     for (NSDictionary *object in reponse) {
         DZNPhotoMetadata *metadata = [[DZNPhotoMetadata alloc] initWithObject:object service:service];
-        
-        if ([metadata.sourceURL.scheme.lowercaseString isEqualToString:@"https"]) {
+        BOOL allowedHost = [metadata.sourceURL.host.lowercaseString containsString:NSStringFromService(service).lowercaseString];
+        if ([metadata.sourceURL.scheme.lowercaseString isEqualToString:@"https"] || allowedHost) {
             [result addObject:metadata];
         }        
     }
